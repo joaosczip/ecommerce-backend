@@ -4,5 +4,9 @@
   "main": "index.js",
   "repository": "https://github.com/joaosczip/ecommerce-backend",
   "author": "joaosczip",
-  "license": "MIT"
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
 }
