@@ -12,7 +12,7 @@ export const databaseProviders = [
 				password: "root",
 				database: "test",
 				entities: [__dirname + "../**/models/*.ts"],
-				synchronize: true,
+				migrations: [__dirname + "./migrations/*.ts"],
 			});
 
 			return dataSource.initialize();
