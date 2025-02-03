@@ -8,6 +8,7 @@ import config from "./config";
 	imports: [
 		ConfigModule.forRoot({
 			load: [config],
+			isGlobal: true,
 		}),
 	],
 	controllers: [AppController],
