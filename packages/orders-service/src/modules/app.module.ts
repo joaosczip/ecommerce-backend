@@ -11,7 +11,7 @@ import { DatabaseModule } from "./database/database.module";
 			load: [config],
 			isGlobal: true,
 		}),
-		DatabaseModule.forRoot({}),
+		DatabaseModule,
 	],
 	controllers: [AppController],
 })
