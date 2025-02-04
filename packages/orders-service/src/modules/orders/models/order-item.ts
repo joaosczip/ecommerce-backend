@@ -13,7 +13,7 @@ interface OrderItemAttributes {
 
 type OrderItemExcludedKeysForCreation = "id" | "createdAt" | "updatedAt";
 export type OrderItemCreationAttributes = Omit<OrderItemAttributes, OrderItemExcludedKeysForCreation>;
-export type OrderCreationAttributes = Omit<OrderItemCreationAttributes, OrderItemExcludedKeysForCreation>;
+export type OrderCreationAttributes = Pick<OrderItemAttributes, "productId" | "quantity">;
 type OrderItemConstructor = SetOptional<OrderItemAttributes, OrderItemExcludedKeysForCreation>;
 
 export class OrderItem {
