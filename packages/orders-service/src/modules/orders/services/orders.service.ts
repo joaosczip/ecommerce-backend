@@ -1,10 +1,10 @@
 import { Inject, Injectable } from "@nestjs/common";
 
-import { PrismaService } from "src/modules/database/prisma.service";
+import { PrismaService } from "@modules/database/prisma.service";
 
-import { Order, OrderStatus } from "../models/order";
-import { OrderItem } from "../models/order-item";
-import { PlaceNewOrderDTO } from "../dtos/place-new-order.dto";
+import { Order, OrderStatus } from "@modules/orders/models/order";
+import { OrderItem } from "@modules/orders/models/order-item";
+import { PlaceNewOrderDTO } from "@modules/orders/dtos/place-new-order.dto";
 
 @Injectable()
 export class OrdersService {
@@ -39,7 +39,7 @@ export class OrdersService {
 			(item) =>
 				new OrderItem({
 					...item,
-					order,
+					orderId: order.id,
 				}),
 		);
 

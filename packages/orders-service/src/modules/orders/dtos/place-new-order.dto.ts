@@ -3,7 +3,7 @@ import { OrderCreationAttributes } from "../models/order";
 import { OrderItemCreationAttributes } from "../models/order-item";
 import { Type } from "class-transformer";
 
-class OrderItemForNewOrderDTO implements Omit<OrderItemCreationAttributes, "order"> {
+class OrderItemForNewOrderDTO implements Omit<OrderItemCreationAttributes, "order" | "orderId"> {
 	@IsNotEmpty()
 	@IsString()
 	productId: string;

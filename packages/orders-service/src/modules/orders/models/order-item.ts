@@ -6,7 +6,8 @@ interface OrderItemAttributes {
 	id: string;
 	productId: string;
 	quantity: number;
-	order: Order;
+	order?: Order;
+	orderId: string;
 	createdAt: Date;
 	updatedAt: Date;
 }
@@ -20,15 +21,17 @@ export class OrderItem {
 	id: string;
 	productId: string;
 	quantity: number;
-	order: Order;
+	order?: Order;
+	orderId: string;
 	createdAt: Date;
 	updatedAt: Date;
 
-	constructor({ id, productId, quantity, order, createdAt, updatedAt }: OrderItemConstructor) {
+	constructor({ id, productId, quantity, order, orderId, createdAt, updatedAt }: OrderItemConstructor) {
 		this.id = id;
 		this.productId = productId;
 		this.quantity = quantity;
 		this.order = order;
+		this.orderId = orderId;
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
 	}
